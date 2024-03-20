@@ -1,0 +1,52 @@
+{
+  "THÔNG TIN SINH VIÊN": [
+    {
+      "MSSV": "20215244",
+      "Họ và tên": "Nguyễn Đức Thắng",
+      "Năm vào trường": 2021,
+      "Bậc đào tạo": "KSCLC-TN-TT-VN-ICT",
+      "Chương trình": "Công nghệ thông tin Global ICT 2021",
+      "Khoa/Viện quản lý": "Trường Công nghệ thông tin và Truyền Thông",
+      "Tình trạng học tập": "Học"
+    },
+    {
+      "Giới tính": "Nam",
+      "Lớp": "ICT 01-K66",
+      "Khóa học": 66,
+      "Email": "thang.nd215244@sis.hust.edu.vn"
+    }
+  ],
+  "THÔNG TIN HỌC TẬP": [
+    {
+      "Tổng kết học kỳ": "20231",
+      "Trung bình tích lũy": 3.48,
+      "Số TC nợ đăng ký": 0
+    },
+    { "Số TC tích lũy": 89, "Trình độ sinh viên": 3, "Mức cảnh báo": "M0" }
+  ],
+  "THÔNG TIN CÁ NHÂN": [
+    {
+      "Dân tộc": "KINH",
+      "Năm TN cấp 3": 2021,
+      "Địa chỉ": "PHƯỜNG TRẦN LÃM, THÀNH PHỐ THÁI BÌNH, TỈNH THÁI BÌNH",
+      "Số CMTND": "034***66",
+      "Nơi cấp": "TỈNH THÁI BÌNH",
+      "Họ tên bố": "NGUYỄN VĂN KHANH",
+      "Năm sinh": 1972,
+      "Nghề nghiệp": "CÁN BỘ",
+      "Điện thoại": "091***10",
+      "Email": "NG*@*IL.COM"
+    },
+    {
+      "Tôn giáo": "KHÔNG",
+      "Trường THPT": "CHUYÊN THÁI BÌNH",
+      "Hộ khẩu": "PHƯỜNG TRẦN LÃM, THÀNH PHỐ THÁI BÌNH, TỈNH THÁI BÌNH",
+      "Số Điện thoại": "091091***81",
+      "Họ tên mẹ": "LƯU THỊ HỢP",
+      "Năm sinh": 1974,
+      "Nghề nghiệp": "CÁN BỘ",
+      "Điện thoại": "098***99",
+      "Email": "LU*@IL.COM"
+    }
+  ]
+}

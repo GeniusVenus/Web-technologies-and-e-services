@@ -1,0 +1,64 @@
+{
+  "NGUYỄN ĐỨC THẮNG": [
+    { "content": "Thư báo", "link": "#" },
+    { "content": "Đổi mật khẩu", "link": "#" },
+    { "content": "Cấp lại mật khẩu Email trường", "link": "#" },
+    { "content": "Thoát đăng nhập", "link": "#" },
+    { "content": "Thông tin mật khẩu Email cấp mới", "link": "#" },
+    { "content": "Xác nhận khai báo y tế", "link": "#" }
+  ],
+  "QUẢN LÝ HỒ SƠ SINH VIÊN": [
+    { "content": "Thông tin sinh viên", "link": "#" },
+    { "content": "Cập nhật thông tin sinh viên", "link": "#" },
+    { "content": "Thông tin lớp sinh viên", "link": "#" }
+  ],
+  "ĐÀO TẠO": [
+    {
+      "content": [
+        { "text": "Chương trình đào tạo sinh viên", "link": "#" },
+        { "text": "Danh mục học phần", "link": "#" }
+      ],
+      "text": "Chương trình đào tạo",
+      "link": ""
+    },
+    {
+      "content": [
+        { "text": "Đăng ký học phần", "link": "#" },
+        { "text": "Thời khóa biểu", "link": "#" },
+        { "text": "Tra cứu đăng ký lớp các kỳ", "link": "#" }
+      ],
+      "text": "Kế hoạch học tập",
+      "link": ""
+    },
+    {
+      "content": [
+        { "text": "Kết quả thi TOEIC", "link": "#" },
+        { "text": "Bảng điểm cá nhân", "link": "#" },
+        { "text": "Bảng điểm học phần", "link": "#" },
+        { "text": "Kiểm tra nhập điểm kì mới nhất", "link": "#" }
+      ],
+      "text": "Kết quả học tập",
+      "link": ""
+    },
+    {
+      "content": [
+        { "text": "Kết quả xét nhận ĐATN", "link": "#" },
+        {
+          "text": "Đăng ký xét tốt nghiệp",
+          "link": "#"
+        }
+      ],
+      "text": "Đồ án - Tốt nghiệp",
+      "link": ""
+    },
+    { "content": "Thời khóa biểu tạm thời", "link": "#" }
+  ],
+  "TƯ VẤN TRỰC TUYẾN": [
+    { "content": "Hỏi đáp - Tư vấn trực tuyến", "link": "#" }
+  ],
+  "TÀI CHÍNH HỌC VỤ": [
+    { "content": "Thông tin công nợ học phí", "link": "#" },
+    { "content": "Thanh toán học phí trực tuyến", "link": "#" }
+  ],
+  "DỊCH VỤ HÀNH CHÍNH": [{ "content": "ĐK cấp giấy tờ", "link": "#" }]
+}

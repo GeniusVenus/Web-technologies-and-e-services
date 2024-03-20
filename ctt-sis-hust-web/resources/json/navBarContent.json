@@ -1,0 +1,32 @@
+{
+  "Đào tạo Đại học": [
+    { "text": "Quy định - Quy chế", "link": "#" },
+    { "text": "Các ngành đào tạo", "link": "#" },
+    { "text": "Kế hoạch học tập", "link": "#" },
+    { "text": "Tin tức - Thông báo", "link": "#" },
+    { "text": "Thông tin văn bằng 2", "link": "#" },
+    { "text": "Chương trình đặc biệt", "link": "#" },
+    { "text": "Biểu mẫu", "link": "#" },
+    { "text": "Liên hệ", "link": "#" }
+  ],
+  "Đào tạo Sau đại học": [
+    { "text": "Tuyển sinh", "link": "#" },
+    { "text": "Đào tạo", "link": "#" },
+    { "text": "Mẫu văn bản giấy tờ", "link": "#" },
+    { "text": "Văn bản - Quy chế", "link": "#" },
+    { "text": "Thông tin văn bằng", "link": "#" },
+    { "text": "Trang thông tin cá nhân", "link": "#" },
+    { "text": "Liên hệ", "link": "#" }
+  ],
+  "Cộng tác Sinh viên": [
+    { "text": "Thông báo", "link": "#" },
+    { "text": "Hỏi - Đáp", "link": "#" },
+    { "text": "Học phí", "link": "#" },
+    { "text": "Học bổng tài trợ", "link": "#" },
+    { "text": "Việc làm", "link": "#" },
+    { "text": "Biểu mẫu", "link": "#" },
+    { "text": "Cựu sinh viên", "link": "#" },
+    { "text": "Liên hệ", "link": "#" }
+  ],
+  "Tra cứu văn bằng": { "text": "Tra cứu văn bằng", "link": "#" }
+}
