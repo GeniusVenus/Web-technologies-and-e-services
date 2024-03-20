@@ -42,7 +42,8 @@ main {
 main > .main-container {
   display: flex;
   margin-top: 20px;
-  width: fit-content;
+  max-width: 100%;
+  min-width: fit-content;
   overflow-x: auto;
 }
 /* Info section */
