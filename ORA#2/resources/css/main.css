@@ -58,7 +58,6 @@ main > .main-container > .info-section > .info-section-header {
   font-weight: bold;
   color: red;
   font-size: 16px;
-  font-weight: 700;
 }
 main > .main-container > .info-section > .info-section-body {
   display: flex;
@@ -137,6 +136,7 @@ main > .main-container > .info-section > .info-section-body {
 .info-container.editable > .info-container-body > .avatar > input {
   display: block;
 }
+
 .main-container
   > .info-section
   > .info-section-body
@@ -173,6 +173,12 @@ main > .main-container > .info-section > .info-section-body {
 .info-container.editable > .info-container-body > .avatar > input {
   display: block;
 }
+.info-container > .info-container-body > .avatar > .upload-image-btn {
+  display: none;
+}
+.info-container.editable > .info-container-body > .avatar > .upload-image-btn {
+  display: block;
+}
 
 .info-container.editable
   > .info-container-body
@@ -181,7 +187,17 @@ main > .main-container > .info-section > .info-section-body {
   > input {
   display: block;
 }
+.info-container.editable
+  > .info-container-body
+  > .list-info
+  > .info-item
+  > select {
+  display: block;
+}
 .list-info > .info-item > input {
+  display: none;
+}
+.list-info > .info-item > select {
   display: none;
 }
 .info-container.editable > .info-container-header > .ok-btn {
@@ -190,11 +206,16 @@ main > .main-container > .info-section > .info-section-body {
 .info-container.editable > .info-container-header > .cancel-btn {
   display: block;
 }
+.info-container.editable > .info-container-header > .reset-btn {
+  display: block;
+  align-self: self-end;
+}
 .info-container.editable > .info-container-header > .edit-btn {
   display: none;
 }
 .ok-btn,
-.cancel-btn {
+.cancel-btn,
+.reset-btn {
   color: black;
   padding: 0px 10px;
   display: none;
@@ -312,4 +333,8 @@ footer > .footerRight > p {
 }
 .responsive-bar > .control-side-bar:hover {
   background-color: rgb(238, 235, 235);
+}
+
+#upload-image {
+  display: none;
 }

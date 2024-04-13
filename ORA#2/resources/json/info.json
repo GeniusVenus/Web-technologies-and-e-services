@@ -1,0 +1,52 @@
+{
+  "THÔNG TIN SINH VIÊN": [
+    {
+      "MSSV": "20215244",
+      "Họ và tên": "Nguyễn Đức Thắng",
+      "Năm vào trường": 2021,
+      "Bậc đào tạo": "KSCLC-TN-TT-VN-ICT",
+      "Chương trình": "Công nghệ thông tin Global ICT 2021",
+      "Khoa/Viện quản lý": "Trường Công nghệ thông tin và Truyền Thông",
+      "Tình trạng học tập": "Học"
+    },
+    {
+      "Giới tính": "Nam",
+      "Lớp": "ICT 01-K66",
+      "Khóa học": 66,
+      "Email": "thang.nd215244@sis.hust.edu.vn"
+    }
+  ],
+  "THÔNG TIN HỌC TẬP": [
+    {
+      "Tổng kết học kỳ": "20231",
+      "Trung bình tích lũy": 3.48,
+      "Số TC nợ đăng ký": 0
+    },
+    { "Số TC tích lũy": 89, "Trình độ sinh viên": 3, "Mức cảnh báo": "M0" }
+  ],
+  "THÔNG TIN CÁ NHÂN": [
+    {
+      "Dân tộc": "KINH",
+      "Năm TN cấp 3": 2021,
+      "Địa chỉ": "FAKE ADDRESS",
+      "Số CMTND": "123***12",
+      "Nơi cấp": "TỈNH THÁI BÌNH",
+      "Họ tên bố": "LÊ VĂN A",
+      "Năm sinh": 1974,
+      "Nghề nghiệp": "NGHỀ A",
+      "Điện thoại": "012***90",
+      "Email": "TR*@*IL.COM"
+    },
+    {
+      "Tôn giáo": "KHÔNG",
+      "Trường THPT": "CHUYÊN THÁI BÌNH",
+      "Hộ khẩu": "FAKE NEWS",
+      "Số Điện thoại": "012345***91",
+      "Họ tên mẹ": "NGUYỄN THỊ B",
+      "Năm sinh": 1974,
+      "Nghề nghiệp": "NGHỀ A",
+      "Điện thoại": "012***90",
+      "Email": "NT*@IL.COM"
+    }
+  ]
+}

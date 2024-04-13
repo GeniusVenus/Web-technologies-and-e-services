@@ -1,0 +1,144 @@
+main > .main-container > .side-bar {
+  width: 285px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+main > .main-container > .side-bar > .menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f1eb;
+  padding: 10px;
+}
+main > .main-container > .side-bar > .menu > .menu-title {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  font-family: "Segoe UI", "Helvetica Neue", "Droid Sans", Arial, Tahoma, Geneva,
+    sans-serif;
+}
+
+main > .main-container > .side-bar > .menu > .menu-title > .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+main > .main-container > .side-bar > .menu > .menu-title > span {
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: bold;
+  color: #8c1515;
+  transform: translateY(4px);
+}
+
+main > .main-container > .side-bar > .menu > .menu-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 7px;
+  border-bottom: 1px solid #ccc;
+  color: rgb(51, 122, 183);
+  font-size: 13px;
+  line-height: 26px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+.side-bar > .menu > .menu-item:hover > .dropdown > .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+.side-bar > .menu > .menu-item > .dropdown > .dropdown-content {
+  display: none;
+}
+.side-bar
+  > .menu
+  > .menu-item
+  > .dropdown
+  > .dropdown-content
+  > .dropdown-item {
+  text-decoration: none !important;
+}
+main > .main-container > .side-bar > .menu > .menu-item > .item {
+  text-decoration: none !important;
+}
+main > .main-container > .side-bar > .menu > .menu-item:hover {
+  background-color: #e6e8ec;
+}
+
+main > .main-container > .side-bar > .menu > .menu-item:hover > .item {
+  color: #9f224e;
+}
+.side-bar > .menu > .menu-item-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: rgb(51, 122, 183);
+  font-size: 13px;
+  line-height: 26px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+.side-bar > .menu > .menu-item-dropdown > i {
+  position: absolute;
+  left: -12px;
+  top: 15px;
+  color: #bf304a;
+  font-size: 7px;
+}
+.side-bar > .menu > .menu-item-dropdown > .dropdown {
+  width: 100%;
+}
+.side-bar > .menu > .menu-item-dropdown > .dropdown > .dropdown-content {
+  display: none;
+}
+.side-bar
+  > .menu
+  > .menu-item-dropdown
+  > .dropdown
+  > .dropdown-content
+  > .dropdown-item {
+  margin-left: 10px;
+  text-decoration: none !important;
+  padding: 5px 7px;
+  border-bottom: 1px solid #ccc;
+}
+.side-bar
+  > .menu
+  > .menu-item-dropdown
+  > .dropdown
+  > .dropdown-content
+  > .dropdown-item:hover {
+  background-color: #e6e8ec;
+  color: #9f224e;
+}
+.side-bar > .menu > .menu-item-dropdown > .dropdown > .dropdown-title {
+  border-bottom: 1px solid #ccc;
+  padding: 5px 7px;
+}
+.side-bar > .menu > .menu-item-dropdown > .dropdown > .dropdown-title:hover {
+  background-color: #e6e8ec;
+  color: #9f224e;
+}
+.side-bar > .menu > .menu-item-dropdown > .dropdown:hover > .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+.num-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(156, 16, 16);
+  font-size: 12px;
+  line-height: 12px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  width: 21px;
+  height: 19px;
+  font-family: "Segoe UI", "Helvetica Neue", "Droid Sans", Arial, Tahoma, Geneva,
+    sans-serif;
+  padding: 3px 7px;
+}

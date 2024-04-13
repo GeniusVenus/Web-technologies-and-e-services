@@ -1,0 +1,106 @@
+.nav-bar {
+  z-index: 999;
+  position: relative;
+  display: flex;
+  font-family: Tahoma, Geneva, sans-serif;
+  background-color: #e6e8ec;
+  padding: 2px 0;
+  box-shadow: rgb(156, 16, 16) 0px -5px 10px 0px;
+  margin-bottom: 6px;
+}
+.nav-bar > a {
+  text-decoration: none !important;
+}
+/* Normal item */
+
+.nav-bar > .item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 0;
+  font-size: 16px;
+  color: rgb(52, 52, 52);
+  gap: 6px;
+  cursor: pointer;
+}
+.nav-bar > .item:hover {
+  background-color: #a90707;
+  color: rgb(235, 235, 235);
+}
+.nav-bar > .item > img {
+  width: 14px;
+  height: 14px;
+}
+
+/* Dropdown */
+.nav-bar > .dropdown {
+  flex: 1;
+  position: relative;
+}
+
+/* Dropdown content */
+.nav-bar > .dropdown > .dropdown-content {
+  z-index: 1;
+  position: absolute;
+  border: 1px solid #cbcbcb;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.15) !important;
+  transform: scaleY(0);
+}
+.nav-bar > .dropdown > .dropdown-content > .dropdown-item {
+  display: none;
+}
+.nav-bar > .dropdown.hovered > .dropdown-content {
+  display: flex;
+  width: 306px;
+  flex-direction: column;
+  position: absolute;
+  transform: scaleY(1);
+  transition: transform 0.075s ease-in-out;
+  transition-delay: 0.3s;
+  transform-origin: top;
+}
+.nav-bar > .dropdown.hovered > .dropdown-content > .dropdown-item {
+  display: block;
+}
+.nav-bar > .dropdown > .dropdown-content > .dropdown-item {
+  text-decoration: none !important;
+  background-color: white;
+  font-size: 16px;
+  padding: 6px 18px 6px 6px;
+  color: rgb(52, 52, 52);
+}
+.nav-bar > .dropdown > .dropdown-content > .dropdown-item:hover {
+  text-decoration: none !important;
+  font-size: 16px;
+  color: rgb(235, 235, 235);
+  background-color: #a90707;
+}
+/* Dropdown title */
+.nav-bar > .dropdown > .dropdown-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 0;
+  font-size: 16px;
+  gap: 6px;
+}
+.nav-bar > .dropdown.hovered > .dropdown-title {
+  background-color: #9c0303;
+  color: rgb(235, 235, 235);
+  cursor: pointer;
+}
+
+/* Icons */
+.icon-left {
+  width: 14px;
+  height: 14px;
+}
+
+.icon-right {
+  position: absolute;
+  width: 7px;
+  height: 5px;
+  right: 2px;
+}
