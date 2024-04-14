@@ -2,13 +2,7 @@ import data from "../json/info.json" assert { type: "json" };
 import sideBarContent from "../json/sideBarContent.json" assert { type: "json" };
 
 const main = document.getElementById("main");
-if (window.sessionStorage.length <= 10) {
-  data["THÔNG TIN SINH VIÊN"].forEach((item) => {
-    for (const [key, val] of Object.entries(item)) {
-      window.sessionStorage.setItem(key, val);
-    }
-  });
-}
+
 var source_image = "resources/images/avatar.png";
 const source_image_copy = source_image;
 const Tag = (tagName, className) => {
