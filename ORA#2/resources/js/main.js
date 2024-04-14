@@ -193,6 +193,7 @@ for (const [title, info] of Object.entries(data)) {
   /* Edit , Ok , Cancel , Reset button  */
   if (title === "THÔNG TIN SINH VIÊN") {
     info_container.id = "form-info";
+    const tools_btn = Tag("div", "tools");
     const ok_btn = Tag("input", "ok-btn");
     ok_btn.type = "submit";
     ok_btn.value = "Ok";
@@ -215,9 +216,10 @@ for (const [title, info] of Object.entries(data)) {
       resetInfo();
       info_container.classList.toggle("editable");
     });
-    info_container_header.appendChild(ok_btn);
-    info_container_header.appendChild(cancel_btn);
-    info_container_header.appendChild(reset_btn);
+    tools_btn.appendChild(ok_btn);
+    tools_btn.appendChild(cancel_btn);
+    tools_btn.appendChild(reset_btn);
+    info_container_header.appendChild(tools_btn);
     const edit_btn = Tag("img", "edit-btn");
     edit_btn.src = "resources/icons/edit_icon.png";
     edit_btn.addEventListener("click", () => {

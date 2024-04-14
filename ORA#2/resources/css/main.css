@@ -200,15 +200,14 @@ main > .main-container > .info-section > .info-section-body {
 .list-info > .info-item > select {
   display: none;
 }
-.info-container.editable > .info-container-header > .ok-btn {
-  display: block;
+.info-container > .info-container-header > .tools {
+  display: none;
 }
-.info-container.editable > .info-container-header > .cancel-btn {
-  display: block;
-}
-.info-container.editable > .info-container-header > .reset-btn {
-  display: block;
-  align-self: self-end;
+.info-container.editable > .info-container-header > .tools {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  flex: 1;
 }
 .info-container.editable > .info-container-header > .edit-btn {
   display: none;
@@ -218,7 +217,6 @@ main > .main-container > .info-section > .info-section-body {
 .reset-btn {
   color: black;
   padding: 0px 10px;
-  display: none;
 }
 .edit-btn {
   width: 20px;
