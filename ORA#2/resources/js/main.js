@@ -32,32 +32,30 @@ const saveInfo = () => {
   const inputs = form.querySelectorAll("input");
   const select = form.querySelector("select");
   const infos = form.getElementsByClassName("info-item");
-  for (var i = 2; i <= 11; i++) {
+  for (var i = 2; i < inputs.length; i++) {
     TTSV = { ...TTSV, [inputs[i].name]: inputs[i].value };
   }
   TTSV = { ...TTSV, [select.name]: select.value };
   console.log(TTSV);
-  const mssv = form.getElementsByClassName("mssv");
+  // const mssv = form.getElementsByClassName("mssv");
   const upload_image = document.getElementById("upload-image");
   if (upload_image.files[0])
     source_image = URL.createObjectURL(upload_image.files[0]);
   document.getElementById("avatar").src = source_image;
-  mssv[0].innerHTML =
-    "<em>MSSV:</em>" + "<strong>" + TTSV[inputs[2].name] + "</strong>";
-  for (var i = 3; i <= 12; i++) {
-    if (i == 9) {
-      infos[i - 3].innerHTML =
-        `<em>${select.name}</em>` +
+  // mssv[0].innerHTML =
+  //   "<em>MSSV:</em>" + "<strong>" + TTSV[inputs[2].name] + "</strong>";
+  for (var i = 0; i < infos.length; i++) {
+    const input = infos[i].querySelector("input");
+    const select = infos[i].querySelector("select");
+    if (input || select) {
+      infos[i].innerHTML =
+        `<em>${input ? input.name : select.name}</em>` +
         "&nbsp&nbsp&nbsp&nbsp:&nbsp" +
-        `<strong>${TTSV[select.name]}</strong>`;
-      infos[i - 3].appendChild(select);
-      continue;
+        `<strong class="editable">${
+          TTSV[input ? input.name : select.name]
+        }</strong>`;
+      infos[i].appendChild(input ? input : select);
     }
-    infos[i - 3].innerHTML =
-      `<em>${inputs[i - (i > 9)].name}</em>` +
-      "&nbsp&nbsp&nbsp&nbsp:&nbsp" +
-      `<strong>${TTSV[inputs[i - (i > 9)].name]}</strong>`;
-    infos[i - 3].appendChild(inputs[i - (i > 9)]);
   }
 };
 /* Cancel save function */
@@ -70,7 +68,7 @@ const cancelSaveInfo = () => {
   console.log(TTSV);
   document.getElementById("avatar").src = source_image;
   upload_image.value = "";
-  for (var i = 2; i <= 11; i++) {
+  for (var i = 2; i < inputs.length; i++) {
     inputs[i].value = TTSV[inputs[i].name];
   }
   select.value = TTSV[select.name];
@@ -87,26 +85,25 @@ const resetInfo = () => {
   TTSV = TTSVCopy;
   source_image = source_image_copy;
   console.log(TTSV);
-  const mssv = form.getElementsByClassName("mssv");
+  // const mssv = form.getElementsByClassName("mssv");
   document.getElementById("avatar").src = source_image;
-  mssv[0].innerHTML =
-    "<em>MSSV:</em>" + "<strong>" + TTSV[inputs[2].name] + "</strong>";
-  for (var i = 3; i <= 12; i++) {
-    if (i == 9) {
-      infos[i - 3].innerHTML =
-        `<em>${select.name}</em>` +
+  // mssv[0].innerHTML =
+  //   "<em>MSSV:</em>" + "<strong>" + TTSV[inputs[2].name] + "</strong>";
+
+  for (var i = 0; i < infos.length; i++) {
+    const input = infos[i].querySelector("input");
+    const select = infos[i].querySelector("select");
+    if (input || select) {
+      infos[i].innerHTML =
+        `<em>${input ? input.name : select.name}</em>` +
         "&nbsp&nbsp&nbsp&nbsp:&nbsp" +
-        `<strong>${TTSV[select.name]}</strong>`;
-      infos[i - 3].appendChild(select);
-      continue;
+        `<strong class="editable">${
+          TTSV[input ? input.name : select.name]
+        }</strong>`;
+      infos[i].appendChild(input ? input : select);
     }
-    infos[i - 3].innerHTML =
-      `<em>${inputs[i - (i > 9)].name}</em>` +
-      "&nbsp&nbsp&nbsp&nbsp:&nbsp" +
-      `<strong>${TTSV[inputs[i - (i > 9)].name]}</strong>`;
-    infos[i - 3].appendChild(inputs[i - (i > 9)]);
   }
-  for (var i = 2; i <= 11; i++) {
+  for (var i = 2; i < inputs.length; i++) {
     inputs[i].value = TTSV[inputs[i].name];
   }
   upload_image.value = "";
@@ -224,6 +221,14 @@ for (const [title, info] of Object.entries(data)) {
   const info_container_body = Tag("div", "info-container-body");
   info.forEach((value) => {
     const list_info = Tag("div", "list-info");
+    var list_inputs = [
+      "Họ và tên",
+      "Bậc đào tạo",
+      "Khoa/Viện quản lý",
+      "Giới tính",
+      "Khóa học",
+      "Email",
+    ];
     for (const [key, val] of Object.entries(value)) {
       if (title === "THÔNG TIN SINH VIÊN" && key === "MSSV") {
         const avatar = Tag("div", "avatar");
@@ -255,11 +260,11 @@ for (const [title, info] of Object.entries(data)) {
         avatar.appendChild(upload_image_btn);
         avatar.appendChild(upload_image);
         avatar.appendChild(MSSV);
-        const input = Tag("input");
-        input.type = Number.isInteger(val) ? "number" : "text";
-        input.value = TTSV[key] ? TTSV[key] : val;
-        input.name = key;
-        avatar.appendChild(input);
+        // const input = Tag("input");
+        // input.type = Number.isInteger(val) ? "number" : "text";
+        // input.value = TTSV[key] ? TTSV[key] : val;
+        // input.name = key;
+        // avatar.appendChild(input);
         info_container_body.appendChild(avatar);
         continue;
       }
@@ -267,7 +272,9 @@ for (const [title, info] of Object.entries(data)) {
       info_item.innerHTML =
         `<em>${key}</em>` +
         "&nbsp&nbsp&nbsp&nbsp:&nbsp" +
-        `<strong>${title === "THÔNG TIN SINH VIÊN" ? TTSV[key] : val}</strong>`;
+        `<strong class=${
+          list_inputs.includes(key) ? "editable" : "non-editable"
+        }>${title === "THÔNG TIN SINH VIÊN" ? TTSV[key] : val}</strong>`;
       if (title === "THÔNG TIN SINH VIÊN") {
         const input = Tag(key === "Giới tính" ? "select" : "input");
         input.name = key;
@@ -284,7 +291,7 @@ for (const [title, info] of Object.entries(data)) {
           });
           input.value = TTSV[key];
         }
-        info_item.appendChild(input);
+        if (list_inputs.includes(key)) info_item.appendChild(input);
       }
       list_info.appendChild(info_item);
     }

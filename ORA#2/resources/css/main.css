@@ -127,9 +127,6 @@ main > .main-container > .info-section > .info-section-body {
 .info-container > .info-container-body > .avatar > input {
   display: none;
 }
-.info-container.editable > .info-container-body > .avatar > .mssv > strong {
-  display: none;
-}
 .info-container > .info-container-body > .avatar > .mssv > p {
   display: block;
 }
@@ -164,7 +161,7 @@ main > .main-container > .info-section > .info-section-body {
   > .info-container-body
   > .list-info
   > .info-item
-  > strong {
+  > .editable {
   display: none;
 }
 .info-container > .info-container-body > .avatar > input {
