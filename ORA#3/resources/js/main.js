@@ -1,7 +1,7 @@
 import sideBarContent from "../json/sideBarContent.json" assert { type: "json" };
 
 const main = document.getElementById("main");
-
+const body = document.querySelector("body");
 const Tag = (tagName, className) => {
   const tag = document.createElement(tagName);
   if (className) tag.classList.add(className);
@@ -74,10 +74,48 @@ const handleChangeValue = (groupIndex, itemIndex, value) => {
   console.log(`${groupIndex} - ${itemIndex} - ${value}`);
   TTCN[groupIndex].content[itemIndex].value = value;
 };
+const handleOpenModal = (groupIndex, itemIndex) => {
+  console.log("Modal opened");
+  const modal = document.querySelector("dialog");
+  const span = document.querySelector(".modal-delete-content");
+  modal.showModal();
+  const confirm_button = document.querySelector(".confirm-button");
+  if (itemIndex !== undefined) {
+    span.innerText = `Wanna delete item number ${
+      itemIndex + 1
+    } at group number ${groupIndex + 1}?`;
+    confirm_button.onclick = () => {
+      handleDeleteItem(groupIndex, itemIndex);
+      modal.close();
+    };
+  } else {
+    span.innerText = `Wanna delete group number ${groupIndex + 1}?`;
+    confirm_button.onclick = () => {
+      handleDeleteGroup(groupIndex);
+      modal.close();
+    };
+  }
+};
+
 const clearInfo = () => {
   const info_section_body = document.getElementById("info-section-body");
   info_section_body.innerHTML = "";
 };
+/* Modal */
+const modal = Tag("dialog", "modal-delete");
+const modal_content = Tag("span", "modal-delete-content");
+const cancel_button = Tag("button", "cancel-button");
+cancel_button.innerText = "Cancel";
+const confirm_button = Tag("button", "confirm-button");
+confirm_button.innerText = "Confirm";
+cancel_button.onclick = () => {
+  const modal = document.querySelector("dialog");
+  modal.close();
+};
+modal.appendChild(modal_content);
+modal.appendChild(confirm_button);
+modal.appendChild(cancel_button);
+body.appendChild(modal);
 /* Trang chủ redirection */
 const trang_chu = Tag("a", "trang-chu");
 trang_chu.href = "#";
@@ -165,7 +203,7 @@ const readData = () => {
     group_name_input.value = group.name;
     const trash_icon = Tag("i", "bi");
     trash_icon.classList.add("bi-trash");
-    trash_icon.onclick = () => handleDeleteGroup(groupIndex);
+    trash_icon.onclick = () => handleOpenModal(groupIndex);
     group_name_container.appendChild(group_name);
     group_name_container.appendChild(group_name_input);
     if (group.name !== "Thông tin sinh viên")
@@ -181,7 +219,7 @@ const readData = () => {
       const element = document.getElementById(`group_${groupIndex}`);
       element.classList.remove("editable");
       const input = element.querySelector("input");
-      // TTCN[groupIndex].name = input.value;
+      TTCN[groupIndex].name = input.value;
       clearInfo();
       readData();
     };
@@ -222,7 +260,7 @@ const readData = () => {
       info_name_input.value = info.name;
       const trash_icon = Tag("i", "bi");
       trash_icon.classList.add("bi-trash");
-      trash_icon.onclick = () => handleDeleteItem(groupIndex, itemIndex);
+      trash_icon.onclick = () => handleOpenModal(groupIndex, itemIndex);
       info_name_container.appendChild(info_name);
       info_name_container.appendChild(info_name_input);
       info_name.ondblclick = () => {
@@ -239,7 +277,7 @@ const readData = () => {
         );
         element.classList.remove("editable");
         const input = element.querySelector("input");
-        // TTCN[groupIndex].content[itemIndex].name = input.value;
+        TTCN[groupIndex].content[itemIndex].name = input.value;
         clearInfo();
         readData();
       };

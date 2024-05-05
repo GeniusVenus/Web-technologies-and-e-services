@@ -1,4 +1,4 @@
-Just use Live Server on VScode then u're good to go
+Just use Live Server on VScode at this exact folder then u're good to go
 If there are any problems, please contact me as soon as possible.
 Facebook: https://www.facebook.com/profile.php?id=100030393274493
 Email: Thang.ND215244@sis.hust.edu.vn or ducthangnguyen666@gmail.com
