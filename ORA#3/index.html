@@ -22,6 +22,12 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
     <script type="module" src="resources/js/navbar.js"></script>
     <script type="module" src="resources/js/main.js"></script>
@@ -48,15 +54,16 @@
       $(document).ready(function () {
         $("#pdf-download").on("click", () => {
           console.log("Export to pdf");
-          var element = document.getElementsByClassName("info-section")[0];
-          html2canvas(element).then((canvas) => {
-            var doc = new jsPDF("p", "mm", "letter"); // Set page size to letter (8.5x11 inches)
-            var imgData = canvas.toDataURL("image/png");
-
-            doc.addImage(imgData, "PNG", 0, 0, 216, 279); // Set image size to match the page size
-
-            doc.save("ThongTinCaNhan.pdf");
-          });
+          let pdfSec = $(".info-section").html();
+          var opt = {
+            margin: 0,
+            filename: "ThongTinCaNhan.pdf",
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: { scale: 2 },
+            pagebreak: { mode: ["avoid-all", "css", "legacy"] },
+            jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+          };
+          let status = html2pdf().from(pdfSec).set(opt).save();
         });
       });
     </script>
