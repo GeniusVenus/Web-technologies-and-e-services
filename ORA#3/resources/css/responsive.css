@@ -1,0 +1,70 @@
+@media (max-width: 992px) {
+  .info-container-body {
+    flex-direction: column;
+  }
+}
+@media (max-width: 800px) {
+  header > a {
+    margin-left: 6%;
+  }
+}
+@media (max-width: 700px) {
+  main > .responsive-bar {
+    display: flex;
+  }
+  main > .nav-bar {
+    transform: scaleY(0);
+    height: 0px;
+  }
+  main > .nav-bar.active {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.1s;
+    height: auto;
+  }
+  main > .nav-bar.active > .item {
+    align-items: center;
+    justify-content: start;
+    padding: 6px 18px 6px 6px;
+  }
+  main > .nav-bar.active > .dropdown > .dropdown-title {
+    align-items: center;
+    justify-content: start;
+    padding: 6px 18px 6px 6px;
+  }
+  main > .nav-bar.active > .dropdown > .dropdown-title > .icon-right {
+    transform: rotate(270deg);
+  }
+  main > .main-container > .side-bar {
+    transform: scaleY(0);
+    width: 0px;
+    height: 0px;
+  }
+  main > .main-container > .side-bar.active {
+    display: flex;
+    width: 285px;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.05s;
+  }
+
+  footer > .footerRight {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 0;
+  }
+  header > a {
+    margin-left: 0;
+  }
+  header > a > img {
+    width: auto;
+    height: 50px;
+  }
+}
