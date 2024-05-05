@@ -38,6 +38,7 @@ var TTCN = [
   },
 ];
 var MSSV = "_20215244";
+var HOTEN_MSSV = "Nguyen_Duc_Thang_20215244";
 
 /* All necessary functions */
 const handleAddGroup = () => {
@@ -83,13 +84,15 @@ const handleOpenModal = (groupIndex, itemIndex) => {
   if (itemIndex !== undefined) {
     span.innerText = `Wanna delete item number ${
       itemIndex + 1
-    } at group number ${groupIndex + 1}?`;
+    } at group number ${groupIndex + 1} for [${HOTEN_MSSV}]?`;
     confirm_button.onclick = () => {
       handleDeleteItem(groupIndex, itemIndex);
       modal.close();
     };
   } else {
-    span.innerText = `Wanna delete group number ${groupIndex + 1}?`;
+    span.innerText = `Wanna delete group number ${
+      groupIndex + 1
+    } for [${HOTEN_MSSV}]?`;
     confirm_button.onclick = () => {
       handleDeleteGroup(groupIndex);
       modal.close();
@@ -254,7 +257,7 @@ const readData = () => {
       const info_name_container = Tag("div", "info-name-container");
       info_name_container.id = `item_${groupIndex}_${itemIndex}`;
       const info_name = Tag("span", "info-name");
-      info_name.innerHTML = info.name;
+      info_name.innerHTML = info.name + ":";
       const info_name_input = Tag("input", "info-name-input");
       info_name_input.type = "text";
       info_name_input.value = info.name;
@@ -294,6 +297,12 @@ const readData = () => {
           readData();
         }
       });
+      const info_input_container = Tag("div", "info-input-container");
+      info_input_container.id = `item_input_${groupIndex}_${itemIndex}`;
+      const info_value = Tag("span", "info-value");
+      info_value.innerHTML =
+        info.value === "" ? `[Please enter ${info.name}]` : info.value;
+
       const info_item_input = Tag(
         !listSpecial.includes(Normalization(info.name)) ? "input" : "select",
         "info-item-input"
@@ -318,8 +327,45 @@ const readData = () => {
           handleChangeValue(groupIndex, itemIndex, select.value);
         };
       }
+      info_input_container.appendChild(info_value);
+      info_input_container.appendChild(info_item_input);
+      info_value.ondblclick = () => {
+        const element = document.getElementById(
+          `item_input_${groupIndex}_${itemIndex}`
+        );
+        const input = element.querySelector("input");
+        element.classList.add("editable");
+        input.focus();
+      };
+      info_item_input.onblur = () => {
+        const element = document.getElementById(
+          `item_input_${groupIndex}_${itemIndex}`
+        );
+        element.classList.remove("editable");
+        var input;
+        if (!listSpecial.includes(Normalization(info.name)))
+          input = element.querySelector("input");
+        else input = element.querySelector("select");
+        TTCN[groupIndex].content[itemIndex].value = input.value;
+        clearInfo();
+        readData();
+      };
+      info_item_input.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          const element = document.getElementById(
+            `item_input_${groupIndex}_${itemIndex}`
+          );
+          element.classList.remove("editable");
+          const input = element.querySelector("input");
+          TTCN[groupIndex].content[itemIndex].value = input.value;
+          clearInfo();
+          readData();
+        }
+      });
+
       info_item.appendChild(info_name_container);
-      info_item.appendChild(info_item_input);
+      info_item.appendChild(info_input_container);
       info_item.appendChild(trash_icon);
       group_info_body.appendChild(info_item);
     });

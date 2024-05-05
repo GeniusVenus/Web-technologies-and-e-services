@@ -17,7 +17,7 @@ body {
   position: fixed;
   padding: 16px;
   top: 50%;
-  left: 40%;
+  left: 30%;
 }
 .cancel-button,
 .confirm-button {
@@ -157,10 +157,26 @@ main > .main-container > .info-section > .info-section-body {
 .group-info-body > .info-item > .info-name-container.editable > span {
   display: none;
 }
-.group-info-body > .info-item > .info-item-input {
+.group-info-body > .info-item > .info-input-container {
   flex: 1;
 }
-
+.group-info-body > .info-item > .info-input-container > .info-item-input {
+  display: none;
+  width: 100%;
+}
+.group-info-body > .info-item > .info-input-container > span {
+  cursor: pointer;
+  display: block;
+}
+.group-info-body
+  > .info-item
+  > .info-input-container.editable
+  > .info-item-input {
+  display: block;
+}
+.group-info-body > .info-item > .info-input-container.editable > span {
+  display: none;
+}
 /* Note */
 .ghi-chu {
   margin-top: 20px;
